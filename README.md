@@ -5,7 +5,8 @@ What's it offer?
 3. Backup in localStorage.
 
 ## TODO
-need to add possibility to edit notes.
+<del>need to add possibility to edit notes.</del>
+All done :)
 
 ## I used
 Pure react

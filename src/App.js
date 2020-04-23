@@ -59,8 +59,38 @@ class App extends Component{
     localStorage.setItem(note.id,JSON.stringify(note));
   }
 
-  removeFromStorage = (id) => {
+  removeFromStorage = id => {
     localStorage.removeItem(id);
+  }
+
+  changeTitle = (title,note) => {
+    const array = this.state.notes;
+    array.map(item => {
+      if(item.id === note.id){
+        item.title = title;
+      }
+    })
+
+    this.setState({
+      notes: array
+    })
+  }
+
+  changeNote = (noteText,note) => {
+    const array = this.state.notes;
+    array.map(item => {
+      if(item.id === note.id){
+        item.note = noteText;
+      }
+    })
+
+    this.setState({
+      notes: array
+    })
+  }
+
+  saveIt = note => {
+    localStorage.setItem(note.id,JSON.stringify(note));
   }
 
   componentDidMount(){
@@ -133,14 +163,12 @@ class App extends Component{
                 notes.map(note => 
                 <div key={note.id} className="card col-md-5 col-sm-10 p-0 m-4">
                   <div className="card-body">
-                    <h3 className="card-title">{note.title}</h3>
-                    <p>
-                     {note.note}
-                    </p>
+                    <input value={note.title} onChange={(e) => this.changeTitle(e.target.value,note)} className="card-title form-control col-4 card-top"/>
+                    <input value={note.note} onChange={(e) => this.changeNote(e.target.value,note)} className="form-control"/>
                   </div>
                   <div className="card-footer">
-                    <button className="btn w-50 text-primary">
-                      Edit
+                    <button onClick={() => this.saveIt(note)} className="btn w-50 text-primary">
+                      Save
                     </button>
                     <button onClick={() => this.deleteNote(note.id)} className="btn w-50 text-primary">
                       Delete
