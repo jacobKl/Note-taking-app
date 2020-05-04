@@ -163,8 +163,8 @@ class App extends Component{
                 notes.map(note => 
                 <div key={note.id} className="card col-md-5 col-sm-10 p-0 m-4">
                   <div className="card-body">
-                    <input value={note.title} onChange={(e) => this.changeTitle(e.target.value,note)} className="card-title form-control col-4 card-top"/>
-                    <input value={note.note} onChange={(e) => this.changeNote(e.target.value,note)} className="form-control"/>
+                    <input value={note.title} onChange={(e) => this.changeTitle(e.target.value,note)} className="card-title form-control col-4 card-top input"/>
+                    <input value={note.note} onChange={(e) => this.changeNote(e.target.value,note)} className="form-control input"/>
                   </div>
                   <div className="card-footer">
                     <button onClick={() => this.saveIt(note)} className="btn w-50 text-primary">
