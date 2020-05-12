@@ -1,4 +1,6 @@
 ### Hi there, recently i have made a note app
+Link to app: https://jacobkl.github.io/Note-taking-app/
+
 What's it offer?
 1. Adding notes.
 2. Editing and deleting them. (not yet)
